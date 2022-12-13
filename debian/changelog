@@ -1,0 +1,6 @@
+dotnet-sdk-6.0 (0~2212132058-1) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ -- martin <>  Tue, 13 Dec 2022 13:58:47 -0700
