@@ -5,12 +5,9 @@
 #export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
-%:
-	dh $@
-dh_override_auto_build:
-	mkdir share
+override_dh_auto_build:
+	mkdir -p share
 	./dotnet-install.sh -i share -v 6.0.404
 
-dh_override_auto_install:
-	cp -r share/* /usr/share/
-	ln -s /usr/share/dotnet /usr/bin/dotnet
+%:
+	dh $@
