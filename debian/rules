@@ -6,10 +6,13 @@
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 override_dh_auto_configure:
-	mkdir -p ./share
+	mkdir -p usr/share/dotnet
 
 override_dh_auto_build:
-	./dotnet-install.sh -i ./share/ -v 6.0.404
+	./dotnet-install.sh -i usr/share/dotnet -v 6.0.404
+
+override_dh_auto_clean:
+	rm -r usr
 
 %:
 	dh $@
